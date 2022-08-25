@@ -8,7 +8,7 @@ const GetRoutes = () => {
 
 const SetRoutes = () => {
     return (
-        <Router>
+        <Router basename="/profile">
             <GetRoutes />
         </Router>
     );
