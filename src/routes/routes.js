@@ -2,6 +2,7 @@ import Layout from 'layout';
 import Page403 from 'pages/403';
 import Page404 from 'pages/404';
 import Home from 'pages/Home';
+import News from 'pages/News/topic'
 
 const routes = [
     {
@@ -23,11 +24,10 @@ const routes = [
 
             {
                 path: '/news',
-                element: <Home />,
                 children: [
                     {
                         path: 'topic',
-                        element: <Home />,
+                        element: <News />,
                     },
                     {
                         path: ':newId',
