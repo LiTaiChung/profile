@@ -5,43 +5,38 @@ import Home from 'pages/Home';
 
 const routes = [
     {
-        path: 'profile',
+        path: '/403',
+        element: <Page403 />,
+    },
+    {
+        path: '/404',
+        element: <Page404 />,
+    },
+    {
+        element: <Layout />,
         children: [
             {
-                path: '/403',
-                element: <Page403 />,
+                path: '/',
+                index: true,
+                element: <Home />,
             },
+
             {
-                path: '/404',
-                element: <Page404 />,
-            },
-            {
-                element: <Layout />,
+                path: '/news',
+                element: <Home />,
                 children: [
                     {
-                        path: '/',
-                        index: true,
+                        path: 'topic',
                         element: <Home />,
                     },
-        
                     {
-                        path: '/news',
+                        path: ':newId',
                         element: <Home />,
-                        children: [
-                            {
-                                path: 'topic',
-                                element: <Home />,
-                            },
-                            {
-                                path: ':newId',
-                                element: <Home />,
-                            },
-                        ]
                     },
-                ],
-            }
-        ]
-    },
+                ]
+            },
+        ],
+    }
 ];
 
 export default routes;
