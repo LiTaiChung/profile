@@ -1,3 +1,4 @@
+import Layout from 'layout';
 import Page403 from 'pages/403';
 import Page404 from 'pages/404';
 import Home from 'pages/Home';
@@ -5,39 +6,37 @@ import Home from 'pages/Home';
 const routes = [
     {
         path: '/403',
-        exact: true,
-        auth: true,
-        component: Page403,
-        wrapperHeader: false,
+        element: <Page403 />,
     },
     {
         path: '/404',
-        exact: true,
-        auth: true,
-        component: Page404,
-        wrapperHeader: false,
+        element: <Page404 />,
     },
     {
-        path: '/',
-        exact: true,
-        auth: true,
-        component: Home,
-        wrapperHeader: false,
-    },
-    {
-        path: '/news',
-        exact: true,
-        auth: false,
-        component: Home,
-        routes: [
+        element: <Layout />,
+        children: [
             {
-                path: '/topic',
-                exact: true,
-                auth: false,
-                component: Home,
+                path: '/',
+                index: true,
+                element: <Home />,
             },
-        ]
-    },
-]
+
+            {
+                path: '/news',
+                element: <Home />,
+                children: [
+                    {
+                        path: 'topic',
+                        element: <Home />,
+                    },
+                    {
+                        path: ':newId',
+                        element: <Home />,
+                    },
+                ]
+            },
+        ],
+    }
+];
 
 export default routes;

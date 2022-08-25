@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Page403() {
     return (
-        <div>Page</div>
+        <div>Page403</div>
     )
 }

@@ -4,7 +4,7 @@ import {
     AUTH_LOGOUT,
     AUTH_CHECK,
     AUTH_USER,
-} from 'store/action-types';
+} from 'store/action-types/auth';
 
 export function authCheck() {
     return {
